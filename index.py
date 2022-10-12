@@ -1,7 +1,11 @@
 import requests
 import xlsxwriter
+import datetime
 
-workbook = xlsxwriter.Workbook("MyExcel.xlsx")
+now = datetime.datetime.now()
+date_time = now.strftime("%Y.%m.%d_%H.%M.%S")
+
+workbook = xlsxwriter.Workbook(f'{date_time}_ExcelData.xlsx')
 worksheet = workbook.add_worksheet()
 
 
